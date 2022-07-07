@@ -5,9 +5,9 @@ const app = express()
 app.use(express.json())
 
 const students = [
-  {id: 1, FirstName: "Tim", LastName: "Oberman", PhoneNumber: "3303232324", StateCode: 10},
-  {id: 2, FirstName: "Bella", LastName: "Peck", PhoneNumber: "3303232324", StateCode: 12},
-  {id: 3, FirstName: "Mark", LastName: "Baum", PhoneNumber: "3303232324", StateCode: 15},
+  {FirstName: "Tim", LastName: "Oberman", PhoneNumber: "3303232324", StateCode: 10, id: 1},
+  {FirstName: "Bella", LastName: "Peck", PhoneNumber: "3303232324", StateCode: 12, id: 2},
+  {FirstName: "Mark", LastName: "Baum", PhoneNumber: "3303232324", StateCode: 15, id: 3},
 ]
 
 const states = [
@@ -35,11 +35,11 @@ app.get('/api/students/:id', (req, resp) => {
 
 app.post('/api/students/addStudent', (req, resp) => {
   const student = {
-    id: students.length+1,
     FirstName: req.body.FirstName,
     SecondName: req.body.SecondName,
     PhoneNumber: req.body.PhoneNumber,
-    StateCode: req.body.StateCode
+    StateCode: req.body.StateCode,
+    id: students.length+1
   }
   students.push(student)
   resp.send(student)
