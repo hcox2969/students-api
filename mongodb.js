@@ -12,7 +12,7 @@ app.get('/', (req, resp) => {
 
 app.get('/api/students', (req, resp) => {
   database.collection('students').find({}).toArray((err, result) => {
-    if(err) throw err
+    if(err) throw errcd
     resp.send(result)
   })
 })
