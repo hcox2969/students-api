@@ -16,8 +16,7 @@ const states = [
   {StateCode: 15, StateName: "KS"},
   {StateCode: 20, StateName: "MA"},
   {StateCode: 14, StateName: "IA"},
-  {StateCode: 14, StateName: "IA"},
-]
+  ]
 
 app.get('/', (req, resp)=> {
   resp.send('Welcome to the Student List')
